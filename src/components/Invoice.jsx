@@ -134,7 +134,7 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
                 </div>
 
                 <div className="max-w-md ml-10 mt-10 p-6 bg-white rounded-3xl shadow-md">
-                    <h2 className="text-2xl font-bold mb-4">Riepilogo della tua fattura</h2>
+                    <h2 className="text-2xl font-bold mb-4">Riepilogo della tua fattura fattura</h2>
 
                     {/* Mostra il netto calcolato e i dettagli intermedi */}
                     {netto !== null && (
