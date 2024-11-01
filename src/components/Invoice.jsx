@@ -58,14 +58,14 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
 
     return (
         <>
-            <container className="flex justify-between items-start max-w-6xl mx-auto p-6">
-                <div className="max-w-md ml-10 mt-10 p-6 bg-white rounded-3xl shadow-md">
-                    <h2 className="text-2xl font-bold mb-4">Inserisci i dati della fattura</h2>
+            <container className="flex flex-col lg:flex-row justify-center items-center max-w-6xl mx-auto p-6 space-y-6 lg:space-y-0 lg:space-x-10">
+                <div className="w-full lg:max-w-md p-6 bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <h2 className="text-2xl font-bold mb-4 text-gray-800">Inserisci i dati della fattura</h2>
                     <div className="mb-4">
-                        <label className="block text-gray-700">Importo Lordo, compresa rivalsa INPS</label>
+                        <label className="block text-gray-600 font-medium">Importo Lordo, compresa rivalsa INPS</label>
                         <input
                             type="number"
-                            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                            className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                             placeholder="Esempio: € 1000"
                             value={importoLordo}
                             onChange={(e) => setImportoLordo(e.target.value)}
@@ -73,9 +73,9 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
                     </div>
 
                     <div className="mb-4">
-                        <label className="block text-gray-700">Coefficiente di Redditività</label>
+                        <label className="block text-gray-600 font-medium">Coefficiente di Redditività</label>
                         <select
-                            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                            className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                             value={coeffRedd}
                             onChange={(e) => setCoeffRedd(e.target.value)}
                         >
@@ -88,11 +88,11 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
                     </div>
 
                     <div className="mb-4">
-                        <label className="block text-gray-700">Contributi INPS</label>
+                        <label className="block text-gray-600 font-medium">Contributi INPS</label>
                         <input
                             type="number"
                             placeholder="Esempio: 5%"
-                            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                            className="w-full mt-2 p-3 border border-gray-300 rounded-lg bg-gray-100 focus:outline-none"
                             disabled
                             value={contributiInps}
                             onChange={(e) => setContributiInps(e.target.value)}
@@ -100,9 +100,9 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
                     </div>
 
                     <div className="mb-4">
-                        <label className="block text-gray-700">Imposta Sostitutiva</label>
+                        <label className="block text-gray-600 font-medium">Imposta Sostitutiva</label>
                         <select
-                            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+                            className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
                             value={impostaSostitutiva}
                             onChange={(e) => setImpostaSostitutiva(e.target.value)}
                         >
@@ -114,18 +114,13 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
                         </select>
                     </div>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mt-6">
                         <div>
-                            <h2 className="text-2xl font-bold mb-2">
-                                Totale lordo
-                            </h2>
-                            <h2 className="text-3xl font-bold mb-1">
-                                € {importoLordo}
-                            </h2>
+                            <h2 className="text-2xl font-bold mb-2 text-gray-700">Totale lordo</h2>
+                            <h2 className="text-3xl font-bold text-blue-500">€ {importoLordo}</h2>
                         </div>
-
                         <button
-                            className="bg-gray-200 font-bold py-2 px-4 rounded shadow-sm"
+                            className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition-all duration-200 transform hover:scale-105"
                             onClick={handleSubmit}
                         >
                             Calcola il netto
@@ -133,31 +128,32 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
                     </div>
                 </div>
 
-                <div className="max-w-md ml-10 mt-10 p-6 bg-white rounded-3xl shadow-md">
-                    <h2 className="text-2xl font-bold mb-4">Riepilogo della tua fattura fattura</h2>
+                <div className="w-full lg:max-w-md p-6 bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <h2 className="text-2xl font-bold mb-4 text-gray-800">Riepilogo della tua fattura</h2>
 
-                    {/* Mostra il netto calcolato e i dettagli intermedi */}
                     {netto !== null && (
-                        <div>
+                        <div className="space-y-4">
                             <div className="mb-4">
-                                <h3 className="text-xl font-semibold">Importo Lordo:</h3>
-                                <p className="text-lg">€ {importoLordo}</p>
+                                <h3 className="text-xl font-semibold text-gray-700">Importo Lordo:</h3>
+                                <p className="text-lg text-gray-600">€ {importoLordo}</p>
                             </div>
                             <div className="mb-4">
-                                <h3 className="text-xl font-semibold">Imponibile:</h3>
-                                <p className="text-lg">€ {imponibile}</p>
+                                <h3 className="text-xl font-semibold text-gray-700">Imponibile:</h3>
+                                <p className="text-lg text-gray-600">€ {imponibile}</p>
                             </div>
                             <div className="mb-4">
-                                <h3 className="text-xl font-semibold">Imposta Sostitutiva:</h3>
-                                <p className="text-lg">€ {impostoSostitutiva}</p>
+                                <h3 className="text-xl font-semibold text-gray-700">Imposta Sostitutiva:</h3>
+                                <p className="text-lg text-gray-600">€ {impostoSostitutiva}</p>
                             </div>
                             <div className="mb-4">
-                                <h3 className="text-xl font-semibold">Contributi INPS:</h3>
-                                <p className="text-lg">€ {contributiCalcolati}</p>
+                                <h3 className="text-xl font-semibold text-gray-700">Contributi INPS:</h3>
+                                <p className="text-lg text-gray-600">€ {contributiCalcolati}</p>
                             </div>
                             <div className="mb-4">
-                                <h2 className="text-2xl font-bold">Totale Netto</h2>
-                                <p className="text-3xl font-bold">€ {netto}</p>
+                                <h2 className="text-2xl font-bold text-gray-700">Totale Netto</h2>
+                                <p className="text-3xl font-bold text-green-500 transition-transform duration-300 hover:scale-105">
+                                    € {netto}
+                                </p>
                             </div>
                         </div>
                     )}
