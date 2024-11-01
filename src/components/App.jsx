@@ -1,6 +1,6 @@
 // Components
 import { Header } from "./Header.jsx";
-import { UserInput, Recap } from "./UserInput.jsx";
+import { Invoice } from "./Invoice.jsx";
 
 // Variables
 import { coefficientiReddito, imposteSostitutive } from "../back-end/formule.js";
@@ -12,11 +12,11 @@ export const App = () => {
   return (
     <>
       <Header />
-      <UserInput
+      <Invoice
         coefficientiReddito={coefficientiReddito}
         imposteSostitutive={imposteSostitutive}
       />
-      <Recap />
+
     </>
   )
 }
