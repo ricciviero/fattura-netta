@@ -154,3 +154,4 @@ export const UserInput = ({ coefficientiReddito, imposteSostitutive }) => {
         </div >
     );
 };
+
