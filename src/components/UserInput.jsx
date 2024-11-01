@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 
+
 export const UserInput = ({ coefficientiReddito, imposteSostitutive }) => {
 
     const [importoLordo, setImportoLordo] = useState(null);
@@ -16,6 +17,7 @@ export const UserInput = ({ coefficientiReddito, imposteSostitutive }) => {
         const coeffReddNum = parseFloat(coeffRedd);
         const impostaSostitutivaNum = parseFloat(impostaSostitutiva);
         const contributiInpsNum = 26.07; // Fisso al 26.07%
+        setNetto(nettoFinale);
 
 
 
@@ -152,6 +154,32 @@ export const UserInput = ({ coefficientiReddito, imposteSostitutive }) => {
 
             </div>
         </div >
+    );
+};
+
+
+export const Recap = ({ netto }) => {
+
+
+    return (
+        <>
+            <div className="max-w-md ml-10 mt-10 p-6 bg-white rounded-3xl shadow-md">
+                <h2 className="text-2xl font-bold mb-4">Riepilogo della tua fattura</h2>
+
+
+
+                <div className="mb-4">
+                    <h2 className="text-2xl font-bold mb-2">
+                        Totale netto
+                    </h2>
+
+                    <h2 className="text-3xl font-bold mb-1">
+                        {netto}
+                    </h2>
+                </div>
+            </div>
+
+        </>
     );
 };
 
