@@ -1,6 +1,7 @@
 # Fattura Netta - Italian Flat-Rate Tax Calculator
 
 A web application to calculate net invoices for the Italian flat-rate tax regime.
+
 Visit: https://fattura-netta.vercel.app/
 
 ## 🚀 Features
