@@ -158,7 +158,7 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
                     </motion.div>
                 ) : (
                     <div className="text-center text-gray-500 mt-10">
-                        <p className="text-xl">`Inserisci i dati per vedere il riepilogo.`</p>
+                        <p className="text-xl">Inserisci i dati per vedere il riepilogo.</p>
                     </div>
                 )}
             </motion.div>

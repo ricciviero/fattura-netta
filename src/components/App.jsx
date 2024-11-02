@@ -1,6 +1,7 @@
 // Components
 import { Header } from "./Header.jsx";
 import { Invoice } from "./Invoice.jsx";
+import { HowTo } from "./HowTo.jsx";
 import { Analytics } from "@vercel/analytics/react"
 
 // Variables
@@ -18,6 +19,7 @@ export const App = () => {
         coefficientiReddito={coefficientiReddito}
         imposteSostitutive={imposteSostitutive}
       />
+      <HowTo />
 
     </>
   )
