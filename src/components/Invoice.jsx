@@ -129,7 +129,7 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
                 </div>
 
                 <div className="w-full lg:max-w-md p-6 bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800">Riepilogo della tua fattura fattura</h2>
+                    <h2 className="text-2xl font-bold mb-4 text-gray-800">Riepilogo della tua fattura</h2>
 
                     {netto !== null && (
                         <div className="space-y-4">

@@ -7,7 +7,7 @@ export const Header = () => {
                 <div className="flex justify-between items-center h-16">
                     <div className="flex items-center">
                         <h1 className="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors">
-                            Fattura Netta
+                            Fattura Netta Dev mode
                         </h1>
                     </div>
 
