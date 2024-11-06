@@ -9,7 +9,6 @@ export const Header = () => {
                     <div className="flex items-center">
                         <h1 className="text-3xl font-extrabold text-white hover:text-blue-200 transition-colors duration-300 ease-in-out">
                             Fattura Netta
-                            <span className="text-yellow-300 ml-2 text-lg font-semibold">Dev mode</span>
                         </h1>
                     </div>
 
