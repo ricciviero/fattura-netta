@@ -2,6 +2,7 @@
 import { Header } from "./Header.jsx";
 import { Invoice } from "./Invoice.jsx";
 import { HowTo } from "./HowTo.jsx";
+import { Footer } from "./Footer.jsx";
 import { Analytics } from "@vercel/analytics/react"
 
 // Variables
@@ -20,6 +21,7 @@ export const App = () => {
         imposteSostitutive={imposteSostitutive}
       />
       <HowTo />
+      <Footer />
 
     </>
   )
