@@ -14,7 +14,6 @@ export const Header = () => {
                         >
                             Fattura Netta
 
-                            <span className="text-yellow-300 ml-2 text-lg font-semibold">Dev mode</span>
                         </Link>
                     </div>
 
