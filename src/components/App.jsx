@@ -1,4 +1,5 @@
-import { useState } from "react";
+// React essentials
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Components
 import { Header } from "./Header.jsx";
@@ -16,29 +17,30 @@ import { Analytics } from "@vercel/analytics/react";
 import { coefficientiReddito, imposteSostitutive } from "../back-end/formule.js";
 
 export const App = () => {
-  const [currentPage, setCurrentPage] = useState("Home");
-
   return (
-    <>
-      <Header
-        setCurrentPage={setCurrentPage}
-      />
-      {currentPage === "Privacy" ? (
-        <Privacy />
-      ) : (
-        <>
+    <Router>
+      <Header />
+      <Routes>
+        <Route
+          path="/privacy"
+          element={<Privacy />}
+        />
+        <Route
+          path="/"
+          element={
 
-          <Invoice
-            coefficientiReddito={coefficientiReddito}
-            imposteSostitutive={imposteSostitutive}
-          />
-          <HowTo />
-          <Footer
-            setCurrentPage={setCurrentPage}
-          />
-          <Analytics />
-        </>
-      )}
-    </>
+            <>
+              <Invoice
+                coefficientiReddito={coefficientiReddito}
+                imposteSostitutive={imposteSostitutive}
+              />
+              <HowTo />
+              <Footer />
+              <Analytics />
+            </>
+          }
+        />
+      </Routes>
+    </Router >
   );
-};
+}

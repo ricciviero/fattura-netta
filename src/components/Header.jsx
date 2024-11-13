@@ -1,21 +1,21 @@
 import { FaGithub } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
-export const Header = ({ setCurrentPage }) => {
+export const Header = () => {
     return (
         <header className="sticky top-0 bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     <div className="flex items-center">
-                        <a
+                        <Link
                             className="text-3xl font-extrabold text-white hover:text-blue-200 transition-colors duration-300 ease-in-out"
-                            href="#"
-                            onClick={() => setCurrentPage("Home")}
+                            to="/"
                         >
                             Fattura Netta
 
                             <span className="text-yellow-300 ml-2 text-lg font-semibold">Dev mode</span>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="flex items-center space-x-4">
