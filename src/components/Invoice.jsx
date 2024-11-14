@@ -40,6 +40,9 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
         });
     };
 
+    const rateCardGiornaliera = netto / 20;
+    const rateCardOraria = rateCardGiornaliera / 8;
+
     const handleSubmit = (e) => {
         e.preventDefault();
         calcolaNetto();
@@ -143,7 +146,7 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
                         <ResultItem label="Importo Lordo" value={importoLordo} />
                         <ResultItem label="Imponibile" value={imponibile} />
                         <ResultItem label="Imposta Sostitutiva" value={impostoSostitutiva} />
-                        <ResultItem label="Contributi INPS" value={contributiCalcolati} />
+                        <ResultItem label="Contributi INPS" value={contributiCalcolati.toFixed(2)} />
                         <div className="pt-4 border-t-2 border-gray-200">
                             <h2 className="text-2xl font-bold text-gray-700 mb-2">Totale Netto</h2>
                             <motion.p
@@ -152,8 +155,32 @@ export const Invoice = ({ coefficientiReddito, imposteSostitutive }) => {
                                 animate={{ scale: [1, 1.1, 1] }}
                                 transition={{ duration: 0.5 }}
                             >
-                                € {netto}
+                                € {netto.toFixed(2)}
                             </motion.p>
+
+                            <h2 className="text-xl font-bold text-gray-700 mt-6">Rate card giornaliera</h2>
+                            <motion.p
+                                className="text-2xl font-bold text-green-500 mt-2"
+                                initial={{ scale: 1 }}
+                                animate={{ scale: [1, 1.1, 1] }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                € {rateCardGiornaliera.toFixed(2)}
+                            </motion.p>
+
+                            <h2 className="text-xl font-bold text-gray-700 mt-6">Rate card oraria</h2>
+                            <motion.p
+                                className="text-2xl font-bold text-green-500 mt-2"
+                                initial={{ scale: 1 }}
+                                animate={{ scale: [1, 1.1, 1] }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                € {rateCardOraria.toFixed(2)}
+                            </motion.p>
+
+
+
+
                         </div>
                     </motion.div>
                 ) : (
