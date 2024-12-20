@@ -1,6 +1,7 @@
 import { FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import { GithubStarButton } from './GithubButton';
+import { DarkModeButton } from './DarkModeButton';
 
 export const Header = () => {
     return (
@@ -36,6 +37,8 @@ export const Header = () => {
                         >
                             <FaXTwitter className="w-6 h-6" />
                         </a>
+
+                        <DarkModeButton />
 
                     </div>
                 </div>
