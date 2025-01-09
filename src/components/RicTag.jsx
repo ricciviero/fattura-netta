@@ -18,15 +18,7 @@ const RicTag = () => {
                 damping: 17
             }}
         >
-            <motion.img
-                className="w-6 h-6 rounded-full object-cover"
-                src="/ricciviero.png"
-                alt="Ricciviero logo"
-                width={24}
-                height={24}
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
-            />
+
             <motion.span
                 className="font-bold text-sm text-gray-700 group-hover:text-black"
                 initial={{ x: -10, opacity: 0 }}
