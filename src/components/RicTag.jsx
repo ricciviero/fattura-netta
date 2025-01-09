@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import riccivieroImage from '../../public/ricciviero.png'
+import riccivieroImage from '/ricciviero.png'
 
 const RicTag = () => {
     return (
@@ -21,8 +21,8 @@ const RicTag = () => {
         >
             <motion.img
                 className="w-6 h-6 rounded-full object-cover"
-                alt="Ricciviero logo"
                 src={riccivieroImage}
+                alt="Ricciviero logo"
                 width={24}
                 height={24}
                 whileHover={{ rotate: 360 }}
